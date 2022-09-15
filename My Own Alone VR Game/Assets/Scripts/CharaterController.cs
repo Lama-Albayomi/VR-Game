@@ -12,6 +12,7 @@ public class CharaterController : MonoBehaviour
     // refrenses
     public Transform head= null;
     public XRController controller;
+    public ActionBasedController controller1;
 
     // components
     private CharacterController character;
@@ -46,8 +47,8 @@ public class CharaterController : MonoBehaviour
     }
     private void MoveCharacter(){
         // move character
-        Vector3 movement = currentDirection * speed;
-        character.SimpleMove(movement);
+        Vector3 movement = currentDirection * speed * Time.deltaTime;
+        character.Move(movement);
     }
     private void OrientMesh(){
         // orient character
