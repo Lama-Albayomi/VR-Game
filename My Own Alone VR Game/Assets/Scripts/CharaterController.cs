@@ -12,6 +12,7 @@ public class CharaterController : MonoBehaviour
     // refrenses
     public Transform head= null;
     public XRController controller;
+    public ActionBasedController controller1;
 
     // components
     private CharacterController character;
@@ -52,6 +53,7 @@ public class CharaterController : MonoBehaviour
     private void OrientMesh(){
         // orient character
         if (currentDirection != Vector2.zero){
+            Debug.Log("rotate head");
             transform.forward = currentDirection;
         }
     }
