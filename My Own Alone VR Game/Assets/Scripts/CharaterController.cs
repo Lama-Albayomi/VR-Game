@@ -53,7 +53,6 @@ public class CharaterController : MonoBehaviour
     private void OrientMesh(){
         // orient character
         if (currentDirection != Vector2.zero){
-            Debug.Log("rotate head");
             transform.forward = currentDirection;
         }
     }
