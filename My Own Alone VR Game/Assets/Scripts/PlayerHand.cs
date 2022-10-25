@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerHand : MonoBehaviour
 {
+    Rigidbody body;
+    GameObject heldObject;
+    bool holdingObject = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        body = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -21,5 +24,32 @@ public class PlayerHand : MonoBehaviour
             transform.position = new Vector3(hit.point.x, transform.position.y, hit.point.z);
         }
 
+        if (Input.GetMouseButtonUp(0) && heldObject!=null) {
+            Debug.Log("Drop Object");
+            DropObject();    
+        }
+
+
+    }
+    public void HoldObject(GameObject obj) {
+        heldObject = obj;
+        obj.GetComponent<HingeJoint>().connectedBody=body;
+    }
+    public void DropObject() {
+        // remove joint 
+        GameObject charater = heldObject.transform.GetChild(0).gameObject;
+        charater.transform.parent=null;
+
+        heldObject.SetActive(false);
+
+        // snap to grid 
+        Vector3 pos  = charater.transform.position;
+        pos.x = Mathf.Round(pos.x);
+        pos.z = Mathf.Round(pos.z);
+        pos.y = 0.5f;
+
+        charater.transform.rotation = Quaternion.identity;
+        charater.transform.position = pos;
+        heldObject = null;
     }
 }
