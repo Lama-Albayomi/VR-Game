@@ -5,7 +5,7 @@ public class EnemySpawner : MonoBehaviour
 
     public GameObject enemyPrefab;
 
-    bool isEnemyDestroyed = false;    
+    internal bool isEnemyDestroyed = false;    
 
 
     // Start is called before the first frame update
@@ -17,6 +17,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // respawns enemy after destroyed
         if (isEnemyDestroyed)
         {
             isEnemyDestroyed = false;
@@ -24,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    // statically set for now
     void SpawnEnemyRandomlyOnXAxis()
     {
         Vector3 pos = new Vector3(Random.Range(-5, 5), .5f, 3); ;
