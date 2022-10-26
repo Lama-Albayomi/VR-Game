@@ -6,21 +6,25 @@ public class CharaterButton : MonoBehaviour
 {
     public GameObject charaterPrefab;
     private PlayerHand hand;
-    void Start(){
+    void Start()
+    {
         hand = FindObjectOfType<PlayerHand>();
     }
-    void Update(){
-        
+    void Update()
+    {
+
     }
-    public void AssignCharater() {
+    public void AssignCharater()
+    {
         // assign the charater to the grid
     }
-    public void InstantiateCharater() {
+    public void InstantiateCharater()
+    {
         Debug.Log("Instantiate Charater");
         Vector3 pos = hand.transform.position;
-        pos.y-=1;  
-        GameObject charater = Instantiate(charaterPrefab,pos,Quaternion.identity);
+        pos.y -= 1;
+        GameObject charater = Instantiate(charaterPrefab, pos, Quaternion.identity);
         hand.HoldObject(charater);
     }
-    
+
 }
