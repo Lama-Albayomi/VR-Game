@@ -57,9 +57,17 @@ public class Enemy : MonoBehaviour
         if (player.tag == "Player")
         {
             playerAttacking = player.transform.gameObject;
-            player.GetComponent<MoveCharater>().collidedWithEnemy = true;
-            StartCoroutine(TakeDamageOverTime());
+            var playerMove = player.GetComponent<MoveCharater>();
+            playerMove.collidedWithEnemy = true;
+            playerMove.attackEnemy(gameObject);
+            takeDamage();
+            //StartCoroutine(TakeDamageOverTime());
         }
+    }
+
+    void takeDamage()
+    {
+        health -= 10;
     }
 
 }
