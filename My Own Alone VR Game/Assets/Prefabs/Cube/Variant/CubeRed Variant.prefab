@@ -7,18 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2818789161806092462, guid: 844c492804031144a8243a622ab9cb78, type: 3}
-      propertyPath: m_Axis.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2818789161806092462, guid: 844c492804031144a8243a622ab9cb78, type: 3}
-      propertyPath: m_Axis.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2818789161806092462, guid: 844c492804031144a8243a622ab9cb78, type: 3}
-      propertyPath: m_ConnectedAnchor.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4603961609787259141, guid: 844c492804031144a8243a622ab9cb78, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -63,14 +51,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5670657626079665747, guid: 844c492804031144a8243a622ab9cb78, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8c05411b99d2d8c41b1eaa982eb65b84, type: 2}
-    - target: {fileID: 6301818132253641038, guid: 844c492804031144a8243a622ab9cb78, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8c05411b99d2d8c41b1eaa982eb65b84, type: 2}
     - target: {fileID: 7210051008978851195, guid: 844c492804031144a8243a622ab9cb78, type: 3}
       propertyPath: m_Name
       value: CubeRed Variant

@@ -19,11 +19,12 @@ public class Enemy : MonoBehaviour
 
     EnemySpawner enemySpawner;
     public Slider healthBarSlider;
+    internal bool isInCombat = false;
+    GameObject playerAttacking = null;
 
     private void Start()
     {
         health = 100;
-        StartCoroutine(TakeDamageOverTime());
         enemySpawner = GameObject.FindGameObjectWithTag("EnemySpawner").GetComponent<EnemySpawner>();
     }
 
@@ -37,6 +38,7 @@ public class Enemy : MonoBehaviour
     void die()
     {
         enemySpawner.isEnemyDestroyed = true;
+        Destroy(playerAttacking.gameObject);
         Destroy(gameObject);
     }
 
@@ -47,6 +49,16 @@ public class Enemy : MonoBehaviour
         {
             yield return new WaitForSecondsRealtime(1.5f);
             health -= 10;
+        }
+    }
+
+    private void OnTriggerEnter(Collider player)
+    {
+        if (player.tag == "Player")
+        {
+            playerAttacking = player.transform.gameObject;
+            player.GetComponent<MoveCharater>().collidedWithEnemy = true;
+            StartCoroutine(TakeDamageOverTime());
         }
     }
 

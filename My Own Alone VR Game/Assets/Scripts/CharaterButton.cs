@@ -20,7 +20,7 @@ public class CharaterButton : MonoBehaviour
     }
     public void InstantiateCharater()
     {
-        Debug.Log("Instantiate Charater");
+        //Debug.Log("Instantiate Charater");
         Vector3 pos = hand.transform.position;
         pos.y -= 1;
         GameObject charater = Instantiate(charaterPrefab, pos, Quaternion.identity);

@@ -6,7 +6,6 @@ public class PlayerHand : MonoBehaviour
 {
     Rigidbody body;
     GameObject heldObject;
-    bool holdingObject = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,17 +24,20 @@ public class PlayerHand : MonoBehaviour
         }
 
         if (Input.GetMouseButtonUp(0) && heldObject!=null) {
-            Debug.Log("Drop Object");
-            DropObject();    
+            //Debug.Log("Drop Object");
+            DropObject();
         }
 
 
     }
     public void HoldObject(GameObject obj) {
         heldObject = obj;
+        heldObject.transform.GetChild(0).GetComponent<MoveCharater>().isDroppedOnBoard = false;
         obj.GetComponent<HingeJoint>().connectedBody=body;
     }
     public void DropObject() {
+        heldObject.transform.GetChild(0).GetComponent<MoveCharater>().isDroppedOnBoard = true;
+
         // remove joint 
         GameObject charater = heldObject.transform.GetChild(0).gameObject;
         charater.transform.parent=null;

@@ -75,5 +75,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeBlue Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7210051008978851195, guid: 844c492804031144a8243a622ab9cb78, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 844c492804031144a8243a622ab9cb78, type: 3}
