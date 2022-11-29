@@ -20,7 +20,7 @@
 
 namespace Oculus.Interaction.Deprecated
 {
-    [System.Obsolete("Replaced by ISnapPoseProvider")]
+    [System.Obsolete("Replaced by ISnapPoseDelegate")]
     public interface IDropZoneSlotsProvider
     {
     }
